@@ -1,0 +1,122 @@
+
+SCROLL TO BOTTOM FOR RESULTS!!!!!!!!!!!!!!
+
+-Customer-Churn/venv/bin/python" "/home/isaiah/Documents/school work/data mining/Data-Mining-Customer-Churn/random_forests/random_forest.py"
+Shape: (7043, 21)
+
+Columns:
+Index(['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents',
+       'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
+       'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+       'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
+       'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn'],
+      dtype='object')
+
+First 5 rows:
+   customerID  gender  SeniorCitizen Partner Dependents  ...  PaperlessBilling              PaymentMethod MonthlyCharges TotalCharges Churn
+0  7590-VHVEG  Female              0     Yes         No  ...               Yes           Electronic check          29.85        29.85    No
+1  5575-GNVDE    Male              0      No         No  ...                No               Mailed check          56.95       1889.5    No
+2  3668-QPYBK    Male              0      No         No  ...               Yes               Mailed check          53.85       108.15   Yes
+3  7795-CFOCW    Male              0      No         No  ...                No  Bank transfer (automatic)          42.30      1840.75    No
+4  9237-HQITU  Female              0      No         No  ...               Yes           Electronic check          70.70       151.65   Yes
+
+[5 rows x 21 columns]
+
+Data types:
+customerID           object
+gender               object
+SeniorCitizen         int64
+Partner              object
+Dependents           object
+tenure                int64
+PhoneService         object
+MultipleLines        object
+InternetService      object
+OnlineSecurity       object
+OnlineBackup         object
+DeviceProtection     object
+TechSupport          object
+StreamingTV          object
+StreamingMovies      object
+Contract             object
+PaperlessBilling     object
+PaymentMethod        object
+MonthlyCharges      float64
+TotalCharges         object
+Churn                object
+dtype: object
+
+
+ AFTER CLEANING TOTAL CHARGES
+
+After cleaning: (7032, 20)
+gender               object
+SeniorCitizen         int64
+Partner              object
+Dependents           object
+tenure                int64
+PhoneService         object
+MultipleLines        object
+InternetService      object
+OnlineSecurity       object
+OnlineBackup         object
+DeviceProtection     object
+TechSupport          object
+StreamingTV          object
+StreamingMovies      object
+Contract             object
+PaperlessBilling     object
+PaymentMethod        object
+MonthlyCharges      float64
+TotalCharges        float64
+Churn                object
+dtype: object
+Setting up label 
+
+
+
+
+
+X shape: (7032, 19)
+y shape: (7032,)
+Sample y values: Churn
+0    5163
+1    1869
+Name: count, dtype: int64
+
+
+DIVING DATA INTO TRAIN AND TEST 80/20
+
+Train size: (5625, 19) (5625,)
+Test size: (1407, 19) (1407,)
+
+
+ More preprocessing. 
+ one hot encoding categorical features.
+
+Categorical columns: ['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod'] 
+
+
+Numeric columns: ['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalCharges']
+
+
+
+Building and training the random forest pipeline 
+
+
+FINISHED!!!
+
+
+Test Accuracy: 0.787
+
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.83      0.89      0.86      1033
+           1       0.62      0.50      0.55       374
+
+    accuracy                           0.79      1407
+   macro avg       0.73      0.69      0.71      1407
+weighted avg       0.78      0.79      0.78      1407
+
+Number of features after encoding: 45
